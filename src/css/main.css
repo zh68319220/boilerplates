@@ -1,0 +1,515 @@
+.main{
+    width: 640px;
+    height: 1136px;
+}
+.page-slide1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 403px;
+    height: 967px;
+    z-index: -1;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/s1.png') no-repeat;
+}
+.page-slide2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 640px;
+    height: 1136px;
+    z-index: -1;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/s2.png') no-repeat;
+}
+.page-slide3{
+    position: absolute;
+    top: 105px;
+    right: 0;
+    width: 389px;
+    height: 937px;
+    z-index: -1;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/s3.png') no-repeat;
+}
+
+.page-ah{
+	width: 640px;
+	height: 1136px;
+	background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/ah.png') no-repeat;
+}
+.page-metball{
+    width: 640px;
+    height: 1136px;
+    background: url('http://mfiles.sohu.com/news/yufeng/shishang5/imgs/metball.png') no-repeat;
+}
+.page-secret{
+    width: 640px;
+    height: 1136px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/secret.png') no-repeat;
+}
+.page-share{
+    width: 640px;
+    height: 1136px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/sharebg.png') no-repeat;
+}
+.page-result{
+    width: 640px;
+    height: 1136px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/result.png') no-repeat;
+}
+.page-op-ah{
+    width: 640px;
+    height: 1136px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/op-ah.png') no-repeat;
+}
+.page-op-secret{
+    width: 640px;
+    height: 1136px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/op-secret.png') no-repeat;
+}
+.page-op-metball{
+    width: 640px;
+    height: 1136px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/op-metball.png') no-repeat;
+}
+
+.logo{
+	position: absolute;
+	top: 24px;
+	left: 22px;
+	width: 135px;
+	height: 56px;
+	background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/logo.png') no-repeat;
+}
+.title{
+	position: absolute;
+    top: 100px;
+    left: 45px;
+	width: 551px;
+	height: 137px;
+	background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/title.png') no-repeat;
+}
+.title0{
+    opacity: 0;
+    position: absolute;
+    top: 100px;
+    left: 94px;
+    width: 452px;
+    height: 47px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/inv1.png') no-repeat;
+}
+.title1{
+    opacity: 0;
+    position: absolute;
+    top: 167px;
+    left: 82px;
+    width: 489px;
+    height: 100px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/inv2.png') no-repeat;
+}
+.inv-btn{
+    opacity: 0;
+    position: absolute;
+    top: 867px;
+    left: 82px;
+    width: 489px;
+    height: 100px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/inv-btn.png') no-repeat;
+}
+.words{
+    position: absolute;
+    top: 280px;
+    left: 85px;
+    width: 489px;
+}
+.foreword{
+    font-family: 瀹嬩綋;
+    font-size: 24px;
+    color: #d7b27a;
+    text-align: center;
+    line-height: 50px;
+    opacity: 0;
+}
+#meta-btn{
+	position: absolute;
+    top: 296px;
+    left: 35px;
+    width: 151px;
+    height: 120px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/opens.png') no-repeat;
+	background-position: 0 0;
+}
+#secret-btn{
+	position: absolute;
+    top: 481px;
+    left: 238px;
+    width: 190px;
+    height: 120px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/opens.png') no-repeat;
+	background-position: -151px 0;
+}
+#ah-btn{
+	position: absolute;
+    top: 696px;
+    left: 453px;
+    width: 166px;
+    height: 120px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/opens.png') no-repeat;
+	background-position: -341px 0;
+}
+.swiper-container {
+	width: 100%;
+}
+.roles-ah{
+    position: absolute;
+    top: 12px;
+    left: 86px;
+    width: 481px;
+    height: 153px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/roles-ah.png') no-repeat;
+}
+.roles-secret{
+    position: absolute;
+    top: 12px;
+    left: 86px;
+    width: 481px;
+    height: 153px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/roles-secret.png') no-repeat;
+}
+.roles-metball{
+    position: absolute;
+    top: 38px;
+    left: 86px;
+    width: 481px;
+    height: 153px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/roles-metball.png') no-repeat;
+}
+.brief{
+    position: absolute;
+    top: 396px;
+    left: 75px;
+    width: 481px;
+    height: 56px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/opts.png') no-repeat;
+    background-position: 0 0;
+}
+.invitation{
+	position: absolute;
+    top: 766px;
+    left: 75px;
+    width: 481px;
+    height: 56px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/opts.png') no-repeat;
+    background-position: 0 -55px;
+}
+.content1{
+    position: absolute;
+    color: #fff;
+    top: 174px;
+    width: 481px;
+    left: 98px;
+    font-size: 30px;
+    text-align: center;
+}
+.content2{
+    position: absolute;
+    color: #fff;
+    top: 465px;
+    width: 481px;
+    left: 89px;
+    font-size: 26px;
+    text-align: left;
+}
+.content3{
+    position: absolute;
+    color: #fff;
+    top: 842px;
+    width: 481px;
+    left: 85px;
+    font-size: 28px;
+    text-align: center;
+}
+.content{
+    opacity: 0;
+}
+.again{
+    position: absolute;
+    width: 184px;
+    height: 65px;
+    top: 623px;
+    left: 227px;
+}
+.friend{
+    position: absolute;
+    width: 184px;
+    height: 65px;
+    top: 714px;
+    left: 227px;
+}
+.score{
+    position: absolute;
+    font-size: 98px;
+    color: #d7b27a;
+    text-align: center;
+    font-weight: bold;
+    top: 120px;
+    right: 318px;
+    height: 133px;
+    line-height: 133px;
+}
+.estimate{
+    position: absolute;
+    width: 500px;
+    height: 124px;
+    word-break: break-word;
+    font-size: 32px;
+    color: #FFF;
+    text-align: center;
+    font-weight: bold;
+    top: 250px;
+    display: inline-block;
+    left: 70px;
+}
+.author{
+    position: absolute;
+    width: 450px;
+    height: 124px;
+    word-break: break-word;
+    font-size: 25px;
+    color: #FFF;
+    text-align: center;
+    font-weight: bold;
+    top: 906px;
+    display: inline-block;
+    left: 98px;
+}
+.erweima{
+    position: absolute;
+    width: 161px;
+    height: 204px;
+    top: 380px;
+    left: 239px;
+}
+.mask{
+    display: none;
+    position: absolute;
+    width: 640px;
+    height: 1136px;
+    z-index: 1;
+    opacity: 0.8;
+    top: 0;
+    background: #000;
+}
+.modal{
+    display: none;
+    position: absolute;
+    top: 136px;
+    left: 50px;
+    width: 550px;
+    height: 689px;
+    z-index: 999;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/ask-bg.png') no-repeat;
+}
+.close{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 67px;
+    height: 64px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/close.png') no-repeat;
+}
+.right{
+    position: absolute;
+    left: 22px;
+    top: 10px;
+}
+.question{
+    font-size: 30px;
+    margin-top: 44px;
+    color: #d7b27a;
+    text-align: center;
+    padding: 0 40px;
+    margin-bottom: 10px;
+}
+.ask{
+    text-align: center;
+    font-size: 30px;
+    font-family: 瀹嬩綋;
+    color: #fff;
+}
+.options{
+    position: relative;
+    top: 42px;
+    width: 500px;
+    height: 400px;
+    padding: 0 25px;
+}
+.sels{
+    position: relative;
+    border: 2px solid #ebc07f;
+    background-color: #dfd0b4;
+    box-sizing: border-box;
+    height: 70px;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    line-height: 70px;
+    margin-bottom: 31px;
+}
+.sel{
+    background-color: #e2bc83;
+}
+.again-left{
+    position: absolute;
+    width: 184px;
+    height: 63px;
+    top: 624px;
+    left: 27px;
+}
+.again-right{
+    position: absolute;
+    width: 184px;
+    height: 63px;
+    top: 624px;
+    left: 426px;
+}
+.guess{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/guess.png') no-repeat;
+}
+.guessed{
+    position: absolute;
+    width: 144px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px;
+    color: #d7b27a;
+    text-align: center;
+    font-weight: bold;
+    padding-left: 13px;
+    background: url('http://news.sohu.com/upload/yufeng/shishang5/imgs/price.png') no-repeat;
+}
+.confirm{
+    position: absolute;
+    width: 471px;
+    height: 56px;
+    top: 875px;
+    left: 84px;
+}
+.q1{
+    left: 47px;
+}
+.q2{
+    left: 308px;
+}
+.q3{
+    left: 427px;
+    top: 35px;
+}
+.q4{
+    left: 463px;
+    top: 173px;
+}
+.q5{
+    left: 339px;
+    top: 357px;
+}
+.q6{
+    left: 26px;
+    top: 557px;
+}
+.q7{
+    left: 280px;
+    top: 607px;
+}
+.q8{
+    left: 185px;
+    top: 769px;
+}
+.q9{    
+    left: 485px;
+    top: 15px;
+}
+.q10{    
+    left: 463px;
+    top: 260px;
+}
+.q11{    
+    left: 385px;
+    top: 430px;
+}
+.q12{    
+    left: 453px;
+    top: 580px;
+}
+.q13{    
+    left: 400px;
+    top: 732px;
+}
+.q14{    
+    left: 84px;
+    top: 688px;
+}
+.q15{    
+    left: 42px;
+    top: 480px;
+}
+.q16{    
+    left: 88px;
+    top: 343px;
+}
+.q17{    
+    top: 50px;
+    left: 20px;
+}
+.q18{    
+    top: 36px;
+    left: 320px;
+}
+.q19{    
+    top: 9px;
+    left: 438px;
+}
+.q20{    
+    top: 161px;
+    left: 405px;
+}
+.q21{    
+    top: 266px;
+    left: 473px;
+}
+.q22{    
+    top: 400px;
+    left: 473px;    
+}
+.q23{    
+    top: 487px;
+    left: 429px;
+}
+.q24{    
+    top: 776px;
+    left: 440px;
+}
+
+/*animations*/
+@-webkit-keyframes twinkle
+{
+    0%  {opacity: 1;}
+    50% {opacity: 0.2;}
+    100% {opacity: 1;}
+}
+
+@-webkit-keyframes guess-out
+{
+    0%  { -webkit-transform:scale(1);transform:scale(1); }
+    50% { -webkit-transform:scale(2);transform:scale(2); }
+    100% { -webkit-transform:scale(1);transform:scale(1); }
+}
+
+@-webkit-keyframes est
+{
+    0%  { -webkit-transform:scale(0.5);transform:scale(0.5); }
+    50% { -webkit-transform:scale(1.2);transform:scale(1.2); }
+    100% { -webkit-transform:scale(1);transform:scale(1); }
+}

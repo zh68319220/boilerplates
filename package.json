@@ -1,0 +1,42 @@
+{
+  "name": "test-gulp",
+  "version": "0.1.0",
+  "author": {
+    "name": "yf",
+    "email": "420866750@qq.com"
+  },
+  "license": "ISC",
+  "description": "just test",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-csso": "^1.0.1",
+    "gulp-file-include": "^0.13.7",
+    "gulp-filter": "^3.0.1",
+    "gulp-if": "^2.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-minify-html": "^1.0.5",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev-all": "^0.8.22",
+    "gulp-template": "^3.1.0",
+    "gulp-uglify": "^1.5.2",
+    "gulp-useref": "^3.0.5",
+    "gulp-webserver": "^0.9.1"
+  },
+  // "devDependencies": {
+  //   "grunt": "~0.4.1",
+  //   "grunt-contrib-clean": "^0.6.0",
+  //   "grunt-contrib-concat": "~0.4.0",
+  //   "grunt-contrib-copy": "^0.8.1",
+  //   "grunt-contrib-cssmin": "^0.14.0",
+  //   "grunt-contrib-htmlmin": "^0.5.0",
+  //   "grunt-contrib-less": "~0.11.0",
+  //   "grunt-contrib-uglify": "~0.2.2",
+  //   "grunt-contrib-watch": "~0.6.1",
+  //   "grunt-html-build": "~0.3.2"
+  // },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/username/repository.git"
+  }
+}
