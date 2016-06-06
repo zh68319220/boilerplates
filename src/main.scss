@@ -1,0 +1,66 @@
+$width: 640;
+@mixin getRectRem( $w, $h ){
+	@if ($w != 0){
+		width: ($w*10/$width)+rem;
+	}
+	@if ($h != 0){
+		height: ($h*10/$width)+rem;
+	}
+}
+@mixin getPosRem( $left, $top ){
+	position: absolute;
+	@if ($left != 0){
+		left: ($left*10/$width)+rem;
+	}
+	@else{
+		left: 0;
+	}
+	@if ($top != 0){
+		top: ($top*10/$width)+rem;
+	}
+	@else{
+		top: 0;
+	}
+}
+@mixin getSinglePic( $url ){
+	background: url('http://news.sohu.com/upload/yf/enenh5/imgs/' + $url ) center center no-repeat;
+	background-size: cover;
+}
+@function px2rem( $px ){
+	@return $px*10 / $width+rem;
+}
+
+*{padding: 0;margin: 0;}
+html, body { font-family: 微软雅黑;width: 100%;height:100%;overflow: hidden;max-width: 100%; }
+body{ position:relative;width: 640px;margin: 0 auto; }
+
+#content{
+	@include getPosRem( 0, 0 );
+   	@include getRectRem( 640, 0 );
+	@include getSinglePic( 'bg11.jpg' );
+	height: 100%;
+}
+.end1{
+	@include getPosRem( 19, 40 );
+   	@include getRectRem( 602, 197 );
+   	@include getSinglePic( 'end51.jpg' );
+}
+.end2{
+	@include getPosRem( 19, 237 );
+   	@include getRectRem( 602, 400 );
+   	@include getSinglePic( 'end52.jpg' );
+}
+.end3{
+	@include getPosRem( 19, 627 );
+   	@include getRectRem( 602, 249 );
+   	@include getSinglePic( 'end53.jpg' );
+    font-size: px2rem(100);
+}
+.circle{
+	position: absolute;
+	left: px2rem(100);
+	bottom: px2rem(0);
+   	@include getRectRem( 50, 50 );
+   	@include getSinglePic( 'try.png' );
+   	background-color: #000;
+}

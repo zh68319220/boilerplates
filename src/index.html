@@ -1,46 +1,130 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>gulporgrunt</title>
+    <title>Gulp-Work-Flow</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0", user-scalable=no,minimal-ui>
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="yes" name="apple-touch-fullscreen" />
     <meta content="telephone=no,email=no" name="format-detection" />
 
-    <link rel="stylesheet" type="text/css" href="../dist/css/main.min.css">
-    <script type="text/javascript" src="../dist/js/main.min.js"></script>
+    <link rel="stylesheet" href="http://news.sohu.com/upload/commonzzx/normal.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
     
-    <style>
-        *{padding: 0;margin: 0;}
-        .main{ opacity: 0;}
-        html, body, .main {
-            font-family: 微软雅黑;
-            height: 100%;
-            overflow: hidden;
-            background: #1b1b1b;
-        }
-    </style>
-</head>
-<body ontouchmove="event.preventDefault()">
+    <!--移动端版本兼容 -->
     <script type="text/javascript">
-        // adapt the mobile screen
-        function pageUtil(selector){
-            this.ele = document.querySelectorAll(selector)[0];
-            this.scaleNum = document.documentElement.clientWidth/640;
-            return this;
-        }
-        pageUtil.prototype.response = function(height){
-            this.ele.style.cssText = "-webkit-transform-origin: 0 0 0px; -webkit-transform: scale("+this.scaleNum+");position: absolute;width:640px;height:1136px";
-            return this;
-        }
-        pageUtil.prototype.rotate = function(){
-            this.ele["style"]["cssText"] = "width: "+1136+"px;height: "+640+"px;-webkit-transform:rotate(90deg) translate(-50%,-50%);"+
-            "-webkit-transform-origin:0 0; position: absolute; top: 50%; left: 50%;"
-            return this;
-        }
-	new pageUtil(".main").response(1136);
+      (function(win) {
+          var doc = win.document,
+              docEl = doc.documentElement,
+              screenWidth =  parseInt(docEl.clientWidth), 
+              tid;
+          var phoneScale = screenWidth/640;
+          var ua = navigator.userAgent;
+          if (/Android (\d+\.\d+)/.test(ua)){
+              var version = parseFloat(RegExp.$1);
+              if(version>2.3){
+                  document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+'">');
+              }else{
+                  document.write('<meta name="viewport" content="width=640">');
+              }
+          } else {
+              document.write('<meta name="viewport" content="width=device-width, user-scalable=no">');
+          };
+         
+          function refreshRem() {
+              screenWidth =  parseInt(docEl.clientWidth);
+              if (screenWidth > 640) { // 最大宽度
+                  screenWidth = 640;
+              }
+              var rem = screenWidth / 10; // 将屏幕宽度分成10份， 1份为1rem
+              docEl.style.fontSize = rem + 'px';
+          }
+          win.addEventListener('resize', function() {
+              clearTimeout(tid);
+              tid = setTimeout(refreshRem, 300);
+          }, false);
+          win.addEventListener('pageshow', function(e) {
+              if (e.persisted) {
+                  clearTimeout(tid);
+                  tid = setTimeout(refreshRem, 300);
+              }
+          }, false);
+          refreshRem();
+      })(window);
     </script>
-    <div class="main"></div>
+    <!--移动端版本兼容 end -->
+</head>
+<body ontouchstart="event.preventDefault();">
+<div id="loading" class="loading" style="display: none">
+  <div class="pace">
+    <div class="pace-progress">
+      0
+    </div>
+  </div>
+</div>
+<div id="content" style="display: none">
+  <div class="end1"></div>
+  <div class="end2"></div>
+  <div class="end3"></div>
+  <div class="circle"></div>
+</div>
+<script type="text/javascript" src="http://news.sohu.com/upload/yf/pub/zepto-1.1.6-reload.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+<script type="text/javascript">
+  (function(){
+      var  imgUrl= 'http://i3.itc.cn/20160425/3649_f4345b9c_c4df_26d9_d8ce_61bd25903c8f_1.png';
+      var link = window.location.href;
+      appid = '';
+      gSound = '';
+      function shareFriend() {
+          WeixinJSBridge.invoke("sendAppMessage", {
+              appid: appid,
+              img_url: imgUrl,
+              img_width: "200",
+              img_height: "200",
+              link: link,
+              desc: content,
+              title: title
+          }, function(b) {})
+      }
+
+      function shareTimeline() {
+          WeixinJSBridge.invoke("shareTimeline", {
+              appid: appid,
+              img_url: imgUrl,
+              img_width: "200",
+              img_height: "200",
+              link: link,
+              desc: content,
+              title: title
+          }, function(b) {})
+      }
+
+      function shareWeibo() {
+          WeixinJSBridge.invoke("shareWeibo", {
+              content: content,
+              url: link
+          }, function(b) {})
+      }
+      document.addEventListener("WeixinJSBridgeReady", function onBridgeReady() {
+          WeixinJSBridge.on("menu:share:appmessage", function(b) {
+              shareFriend();
+          });
+          WeixinJSBridge.on("menu:share:timeline", function(b) {
+              shareTimeline();
+          });
+          WeixinJSBridge.on("menu:share:weibo", function(b) {
+              shareWeibo();
+          })
+      }, false);
+  })();
+  var _hmt = _hmt || [];
+  (function() {
+      var hm = document.createElement("script");
+      hm.src = "http://hm.baidu.com/hm.js?c154d502f02b12a996c34a02281a3bff";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+  })();
+</script>
 </body>
 </html>

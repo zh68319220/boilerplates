@@ -14,6 +14,7 @@ rename = require('gulp-rename'),
 livereload = require('gulp-livereload'),
 minifyHtml = require("gulp-minify-html"),
 useref = require('gulp-useref'),
+sass = require('gulp-sass'),
 imagemin = require('gulp-imagemin'),
 imageminJpegRecompress = require('imagemin-jpeg-recompress'),
 imageminOptipng = require('imagemin-optipng'),
@@ -55,9 +56,10 @@ gulp.task('compile-less', function () {
 });
 
 gulp.task('compile-sass', function () {
-    gulp.src('sass/*.sass')
+    gulp.src('src/*.scss')
     .pipe(sass())
-    .pipe(gulp.dest('dist/css'));
+    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(gulp.dest('dist'));
 });
 
 // 自动刷新
@@ -109,14 +111,14 @@ gulp.task('watch', function() {
 
   livereload.listen(); //要在这里调用listen()方法
   gulp.watch('src/*.js', ['minify-js']);
-  gulp.watch('src/*.css', ['minify-css']);
+  gulp.watch('src/*.scss', ['compile-sass']);
   gulp.watch('src/index.html', ['minHTML']);
 });
 
 gulp.task('default', function() {
     // 压缩代码
-	gulp.start('minHTML');
-    gulp.start('minify-css');
+    gulp.start('minHTML');
+    gulp.start('compile-sass');
     gulp.start('minify-js');
     gulp.start('imgmin');
 
