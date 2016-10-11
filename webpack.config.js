@@ -1,5 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
+var px2rem = require('postcss-px2rem');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
 
@@ -15,7 +17,7 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:8080',
     'webpack/hot/only-dev-server',
-    path.resolve(__dirname, './src/js/main')
+    path.resolve(__dirname, './src/js/main.js')
   ],
 
   output: {
@@ -37,21 +39,28 @@ module.exports = {
       },
       {
         test: /\.scss/,
-        loader: 'style-loader!css-loader!sass-loader'
+        loader: 'style-loader!css-loader!postcss-loader!sass-loader'
       },
       {
-        test: /\.(css)$/,
-        loader: 'style-loader!css-loader'
+        test: /\.css/,
+        loader: 'style-loader!css-loader!postcss-loader'
       },
       {
         test: /\.(gif|jpg|png)\??.*$/,
-        loader: 'url-loader?limit=8192' // inline base64 URLs for <=8k images, direct URLs for the rest
+        loader: 'url-loader?limit=81920' // inline base64 URLs for <=80k images, direct URLs for the rest
       },
       {
         test: /\.(woff|svg|eot|ttf)$/,
         loader: 'file-loader'
       }
     ]
+  },
+
+  postcss: function() {
+    return [
+      px2rem({remUnit: 64}),
+      autoprefixer({ browsers: ["Android 4.1", "iOS 7.1", "Chrome > 31", "ff > 31", "ie >= 10"] })
+    ];
   },
 
   plugins: [
