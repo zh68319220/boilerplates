@@ -1,3 +1,6 @@
+/*
+  adapt different mobile devices using rem.
+*/
 (function(win) {
     var doc = win.document,
         docEl = doc.documentElement,

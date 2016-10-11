@@ -47,7 +47,7 @@ module.exports = {
       },
       {
         test: /\.(gif|jpg|png)\??.*$/,
-        loader: 'url-loader?limit=81920' // inline base64 URLs for <=80k images, direct URLs for the rest
+        loader: 'url-loader?limit=8192' // inline base64 URLs for <=80k images, direct URLs for the rest
       },
       {
         test: /\.(woff|svg|eot|ttf)$/,
@@ -58,7 +58,7 @@ module.exports = {
 
   postcss: function() {
     return [
-      px2rem({remUnit: 64}),
+      px2rem({remUnit: 64}), // 64 or 75
       autoprefixer({ browsers: ["Android 4.1", "iOS 7.1", "Chrome > 31", "ff > 31", "ie >= 10"] })
     ];
   },
