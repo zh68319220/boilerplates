@@ -116,8 +116,11 @@ body {
   height: 100%;
   position: relative;
   overflow: hidden;
-  transform: translate3d(0, 0, 0);
-  font-family: '微软雅黑';
+  // transform: translateZ(0);  //这个属性影响fixed
+  font-family: "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.02em;
 }
 
 .clearfix {

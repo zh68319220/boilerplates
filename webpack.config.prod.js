@@ -32,12 +32,8 @@ module.exports = {
         loader: 'style-loader!css-loader!postcss-loader!sass-loader'
       },
       {
-        test: /\.css/,
-        loader: 'style-loader!css-loader!postcss-loader'
-      },
-      {
         test: /\.(gif|jpg|png)\??.*$/,
-        loader: 'url-loader?limit=81920' // inline base64 URLs for <=80k images, direct URLs for the rest
+        loader: 'url-loader?limit=81920' // inline base64 URLs for <=8k images, direct URLs for the rest
       },
       {
         test: /\.(woff|svg|eot|ttf)$/,

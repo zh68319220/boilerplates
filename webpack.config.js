@@ -2,6 +2,8 @@ var webpack = require('webpack');
 var path = require('path');
 var px2rem = require('postcss-px2rem');
 var autoprefixer = require('autoprefixer');
+let ip = '10.2.24.49';
+let port = 3000;
 
 module.exports = {
 
@@ -11,17 +13,17 @@ module.exports = {
     inline: true,
     progress: true,
     contentBase: './src',
-    port: 8080
+    port: port
   },
 
   entry: [
-    'webpack-dev-server/client?http://0.0.0.0:8080',
+    'webpack-dev-server/client?http://'+ip+':'+port,
     'webpack/hot/only-dev-server',
     path.resolve(__dirname, './src/js/main.js')
   ],
 
   output: {
-    publicPath: 'http://0.0.0.0:8080/src/',
+    publicPath: 'http://'+ip+':'+port+'/src/',
     filename: 'bundle.js',
     path: path.resolve(__dirname, './src')
   },
@@ -42,12 +44,8 @@ module.exports = {
         loader: 'style-loader!css-loader!postcss-loader!sass-loader'
       },
       {
-        test: /\.css/,
-        loader: 'style-loader!css-loader!postcss-loader'
-      },
-      {
         test: /\.(gif|jpg|png)\??.*$/,
-        loader: 'url-loader?limit=8192' // inline base64 URLs for <=80k images, direct URLs for the rest
+        loader: 'url-loader?limit=8192' // inline base64 URLs for <=8k images, direct URLs for the rest
       },
       {
         test: /\.(woff|svg|eot|ttf)$/,
