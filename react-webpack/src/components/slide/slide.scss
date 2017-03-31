@@ -1,0 +1,10 @@
+.slideWrapper{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	.slide{
+		display: block;
+		a{ display: block; }
+		li{ float: left;width: 100vw; }
+	}
+}

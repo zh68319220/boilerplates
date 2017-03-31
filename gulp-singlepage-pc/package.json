@@ -1,0 +1,26 @@
+{
+  "name": "gulp-website",
+  "version": "1.0.0",
+  "description": "jspk website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "font-spider ./src/index.html & gulp build"
+  },
+  "keywords": [
+    "jspk"
+  ],
+  "author": "yf",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-asset-rev": "0.0.15",
+    "gulp-clean": "^0.3.2",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rev": "^7.1.2",
+    "gulp-rev-collector": "^1.1.1",
+    "gulp-uglify": "^2.1.0",
+    "run-sequence": "^1.2.2"
+  }
+}
