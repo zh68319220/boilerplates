@@ -34,7 +34,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1, h2 {
-  font-weight: normal;
+  font-size: 24dpx;
 }
 
 ul {
@@ -45,6 +45,7 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
+  border: 1rpx solid red;
 }
 
 a {
