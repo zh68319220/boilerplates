@@ -71,21 +71,23 @@ exports.styleLoaders = function (options) {
   return output
 }
 
-//获取多级的入口文件
+// 获取多级的入口文件
 exports.getMultiEntry = function (globPath) {
-  var entries = {},
-    basename, tmp, pathname;
+  var entries = {}
+  var basename
+  var tmp
+  var pathname
   glob.sync(globPath).forEach(function (entry) {
-    basename = path.basename(entry, path.extname(entry));
-    tmp = entry.split('/').splice(-4);
+    basename = path.basename(entry, path.extname(entry))
+    tmp = entry.split('/').splice(-4)
 
-    var pathsrc = tmp[0]+'/'+tmp[1];
-    if( tmp[0] == 'src' ){
-      pathsrc = tmp[1];
+    var pathsrc = tmp[0] + '/' + tmp[1]
+    if (tmp[0] === 'src') {
+      pathsrc = tmp[1]
     }
-    pathname = pathsrc + '/' + basename; // 正确输出js和html的路径
-    entries[pathname] = entry;
-  });
+    pathname = pathsrc + '/' + basename // 正确输出js和html的路径
+    entries[pathname] = entry
+  })
 
-  return entries;
+  return entries
 }
