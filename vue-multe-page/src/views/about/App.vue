@@ -1,7 +1,7 @@
 <template>
 <div id="app">
   <h1>About</h1>
-  <a href="/index.html">home</a>
+  <a href="/index/index.html">home</a>
 </div>
 </template>
 

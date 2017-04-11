@@ -4,9 +4,7 @@ var config = require('../config')
 var merge = require('webpack-merge')
 var vueLoaderConfig = require('./vue-loader.conf')
 var entries = merge(
-  utils.getMultiEntry('./src/views/**/**/*.js'),
-  utils.getMultiEntry('./src/views/**/*.js'),
-  utils.getMultiEntry('./src/views/*.js')
+  utils.getMultiEntry('./src/views/**/**/*.js')
 )
 
 function resolve (dir) {

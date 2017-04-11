@@ -10,9 +10,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
 var entries = merge(
-  utils.getMultiEntry('./src/views/**/**/*.js'),
-  utils.getMultiEntry('./src/views/**/*.js'),
-  utils.getMultiEntry('./src/views/*.js')
+  utils.getMultiEntry('./src/views/**/**/*.js')
 )
 var chunks = Object.keys(entries)
 
@@ -101,9 +99,7 @@ if (config.build.bundleAnalyzerReport) {
 
 // 构建生成多页面的HtmlWebpackPlugin配置，主要是循环生成
 var pages = merge(
-  utils.getMultiEntry('./src/views/**/**/*.html'),
-  utils.getMultiEntry('./src/views/**/*.html'),
-  utils.getMultiEntry('./src/views/*.html')
+  utils.getMultiEntry('./src/views/**/**/*.html')
 )
 
 for (var pathname in pages) {
@@ -112,10 +108,11 @@ for (var pathname in pages) {
   var conf = {
     filename: pathname2,
     template: template, // 模板路径
-    chunks: ['vendor', pathname], // 每个html引用的js模块
+    chunks: ['vendor', 'views/' + pathname.split('/index')[0]], // 每个html引用的js模块
     inject: true, // js插入位置
-    hash: true
+    hash: false
   }
+
   webpackConfig.plugins.push(new HtmlWebpackPlugin(conf))
 }
 

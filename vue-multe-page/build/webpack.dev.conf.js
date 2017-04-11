@@ -35,9 +35,7 @@ module.exports = merge(baseWebpackConfig, {
 })
 
 var pages = merge(
-  utils.getMultiEntry('./src/views/**/**/*.html'),
-  utils.getMultiEntry('./src/views/**/*.html'),
-  utils.getMultiEntry('./src/views/*.html')
+  utils.getMultiEntry('./src/views/**/**/*.html')
 )
 
 for (var pathname in pages) {
@@ -46,7 +44,7 @@ for (var pathname in pages) {
   var conf = {
     filename: pathname2,
     template: template, // 模板路径
-    chunks: [pathname, 'vendors', 'manifest'], // 每个html引用的js模块
+    chunks: ['views/' + pathname.split('/index')[0], 'vendors', 'manifest'], // 每个html引用的js模块
     inject: true              // js插入位置
   }
   module.exports.plugins.push(new HtmlWebpackPlugin(conf))
