@@ -10,8 +10,10 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "promise": "^7.1.1",
     "vue": "^2.2.2",
-    "vue-router": "^2.2.0"
+    "vue-router": "^2.2.0",
+    "webpack-zepto": "0.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
