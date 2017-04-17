@@ -9,6 +9,7 @@
 <script type='es6'>
 import Footer from '../components/Footer.vue'
 import { getGitUser } from '../api/'
+import { bgImg } from '../assets/imgs/bg.jpg'
 
 export default {
   name: 'home',
@@ -33,6 +34,9 @@ export default {
 }
 </script>
 
-<style lang='sass'>
-
+<style lang='scss'>
+.app{
+  display: block;
+  h1{ display:none; }
+}
 </style>
